@@ -1,0 +1,7 @@
+__pycache__/
+.env
+resume-dataset/
+venv/
+*.jsonl
+*.faiss
+*.pkl
