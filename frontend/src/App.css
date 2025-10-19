@@ -3,11 +3,14 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f3f7;
+  /* background-color: #f0f3f7; */
+  background-color: #accef7;
+  height: 100%;
 }
 
+
 .chat-bubble-user {
-  background: #60a5fa;
+  background: #2683f4;
   padding: 10px 16px;
   border-radius: 25px;
   max-width: 70%;
@@ -15,10 +18,11 @@ body, html {
   font-size: 14px;
   margin: 5px 0;
   color: white;
+  word-wrap: break-word;
 }
 
 .chat-bubble-bot {
-  background: #bebfc0;
+  background: #d1d2d3;
   padding: 10px 16px;
   border-radius: 25px;
   max-width: 70%;
@@ -26,6 +30,7 @@ body, html {
   font-size: 14px;
   margin: 5px 0;
   color: black;
+  word-wrap: break-word;
 }
 
 .chat-box {
@@ -36,39 +41,42 @@ body, html {
   height: 50vh;
   border-radius: 12px;
   padding: 15px;
-  overflow-y: auto;
   margin-top: 20px;
-  background-color: #accef7;
+  background-color: #ffffff;
+  overflow-y: auto;
+  flex-shrink: 0;
+  scroll-behavior: smooth; 
 }
 
 .file-upload {
-  width: 70%;
-  max-width: 500px;
-  height: 120px;
+  min-width: 220px;
+  min-height: 120px;
   border: 2px dashed #93c5fd;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: rgb(13, 13, 13);
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
-  margin-top: 20px;
+  transition: background-color 0.2s, border-color 0.2s;
+  padding: 10px;
+  text-align: center;
   background-color: #60a5fa;
 }
 
-.file-upload:hover {
+.file-upload.drag-over {
   background-color: #2563eb;
+  border-color: white;
 }
 
 .input-container {
   display: flex;
   width: 70%;
-  max-width: 800px;
+  max-width: 830px;
   position: relative;
   margin-top: 10px;
-  background-color: #ccd2d5;
+  /* background-color: #ccd2d5; */
 }
 
 input[type="text"] {
@@ -78,7 +86,7 @@ input[type="text"] {
   border: none;
   outline: none;
   font-size: 14px;
-  background-color: #ccd2d5;
+  background-color: #ffffff;
 }
 
 button.send-btn {
@@ -86,7 +94,7 @@ button.send-btn {
   right: 5px;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #1e40af;
+  background-color: #2683f4;
   color: white;
   border: none;
   padding: 10px 16px;
@@ -97,4 +105,55 @@ button.send-btn {
 
 button.send-btn:hover {
   background-color: #1e3a8a;
+}
+
+.file-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-grow: 1;
+}
+
+.file-item {
+  background-color: #1e40af;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.file-item span.remove-file {
+  cursor: pointer;
+  color: #f87171;
+  font-weight: bold;
+}
+
+.file-section {
+  width: 70%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .file-section {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .file-list {
+    width: 100%;
+  }
+
+  .chat-box {
+    width: 90%;
+  }
+
+  .input-container {
+    width: 90%;
+  }
 }
