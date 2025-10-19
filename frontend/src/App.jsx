@@ -9,6 +9,7 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
 
+
   const handleFileUpload = (e) => {
     const uploadedFile = e.target.files[0];
     if (!uploadedFile) return;
@@ -53,9 +54,9 @@ export default function App() {
     <div style={{ minHeight: "100vh" }}>
       <Navbar />
       <div style={{ paddingTop: "100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <div className="file-upload" onDrop={handleDrop} onDragOver={handleDragOver}>
+        <div className="file-upload" onDrop={handleDrop} onDragOver={handleDragOver} onClick={() => document.getElementById('hiddenFileInput').click()}>
           {file ? file.name : "Drag & drop a file here or click to upload"}
-          <input type="file" style={{ display: "none" }} onChange={handleFileUpload} />
+          <input type="file" id = "hiddenFileInput" style={{ display: "none" }} onChange={handleFileUpload} />
         </div>
         {error && <p style={{ color: "#f87171" }}>{error}</p>}
 
