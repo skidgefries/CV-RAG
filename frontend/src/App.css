@@ -1,0 +1,100 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f3f7;
+}
+
+.chat-bubble-user {
+  background: #60a5fa;
+  padding: 10px 16px;
+  border-radius: 25px;
+  max-width: 70%;
+  align-self: flex-end;
+  font-size: 14px;
+  margin: 5px 0;
+  color: white;
+}
+
+.chat-bubble-bot {
+  background: #bebfc0;
+  padding: 10px 16px;
+  border-radius: 25px;
+  max-width: 70%;
+  align-self: flex-start;
+  font-size: 14px;
+  margin: 5px 0;
+  color: black;
+}
+
+.chat-box {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  max-width: 800px;
+  height: 50vh;
+  border-radius: 12px;
+  padding: 15px;
+  overflow-y: auto;
+  margin-top: 20px;
+  background-color: #accef7;
+}
+
+.file-upload {
+  width: 70%;
+  max-width: 500px;
+  height: 120px;
+  border: 2px dashed #93c5fd;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+  background-color: #60a5fa;
+}
+
+.file-upload:hover {
+  background-color: #2563eb;
+}
+
+.input-container {
+  display: flex;
+  width: 70%;
+  max-width: 800px;
+  position: relative;
+  margin-top: 10px;
+  background-color: #ccd2d5;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background-color: #ccd2d5;
+}
+
+button.send-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button.send-btn:hover {
+  background-color: #1e3a8a;
+}
